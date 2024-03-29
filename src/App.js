@@ -21,23 +21,32 @@ function App() {
     setTodos(newTodos);
   };
 
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   return (
-    <div>
-      <form onSubmit={handleAddTodo}>
-        <label>
-          Enter todo name:
-          <input type='text' value={todoName} onChange={(e) => setTodoName(e.target.value)}/>
-        </label>
-        <input type="submit" value="Add Todo" />
-      </form>
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>
-            {todo}
-            <button onClick={() => handleDeleteTodo(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+    <div className='todo'>
+      <h1 className='App-header mt-100'>Todo List</h1>
+      <div className='form'>
+        <form onSubmit={handleAddTodo}>
+          <label>
+             Enter todo name:<br/>
+            <input type='text' className='mt-10' value={todoName} onChange={(e) => setTodoName(e.target.value)}/><br/>
+          </label>
+          <input type="submit" value="Add Todo" className='mt-10'/>
+        </form>
+        </div>
+        <div className='todo-list'>
+        <ul>
+          {todos.map((todo, index) => (
+            <li key={index} className='todo-item'>
+             <span className='item'>{capitalizeFirstLetter(todo)}</span> 
+              <button className='delete-button' onClick={() => handleDeleteTodo(index)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
