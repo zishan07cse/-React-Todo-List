@@ -1,0 +1,38 @@
+.todo {
+    text-align: center;
+  }
+  
+  .todo-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Adjust the margin here */
+  }
+  .item{
+    margin-right:20px;
+  }
+  
+  .todo-text {
+    margin-right: 10px; /* Add margin between text and button */
+  }
+  
+  .delete-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #ff0000;
+  }
+ .mt-10{
+    margin-top: 10px;
+ } 
